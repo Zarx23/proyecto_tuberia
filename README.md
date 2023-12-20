@@ -17,6 +17,15 @@ robot_localization: https://github.com/ros-perception/slam_gmapping.git
 gmapping: https://github.com/cra-ros-pkg/robot_localization.git
 
 map_server y amcl: https://github.com/ros-planning/navigation.git
+rplidar_a1.launch
+# Iniciar el Robot
+Se inicia con los comandos:
+```
+ssh -X duckiebot@duckiebot.local
+contraseña del bot
+roslaunch ros_cap duckie_core.launch 
+```
+
 # Iniciar los programas
 Conectado el robot como se hace siempre, se va hasta /catkin, de aqui se va a /proyecto_tuberia/duckiebot_odometry/src con cd, como se ve ahora:
 ```
