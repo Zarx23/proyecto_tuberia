@@ -7,10 +7,15 @@ Joystick para controlar el bot
 
   Requerimientos de software (información compartida por colegas): 
 imu_tools: https://github.com/CCNYRoboticsLab/imu_tools.git
+
 mpu6050_driver: https://github.com/Brazilian-Institute-of-Robotics/mpu6050_driver.git
+
 rplidar_ros: https://github.com/Slamtec/rplidar_ros.git
+
 robot_localization: https://github.com/ros-perception/slam_gmapping.git
+
 gmapping: https://github.com/cra-ros-pkg/robot_localization.git
+
 map_server y amcl: https://github.com/ros-planning/navigation.git
 # Iniciar los programas
 especificar donde lanzamos cada cosa y donde la lanzamos
