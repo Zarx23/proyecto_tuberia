@@ -34,6 +34,6 @@ Para implementar el Lidar, tuvimos que descargar los paquetes necesarios y apren
 
 Juntando estas dos partes es que pudimos completar satisfactoriamente el proyecto, la única cosa que por temas de tiempo no alcanzamos a hacer pero simplifica mucho el uso de este programa es el roslaunch que active todos los sistemas en conjunto, pues como pueden apreciar en el resto del texto, estos se deben correr por separado y en distintas terminales, lo que no es muy cómodo ni productivo.
 
-#Agradecimientos
+# Agradecimientos
 
 Estamos muy agradecidos de haber tenido la oportunidad de desarrollar este proyecto, queremos por ello, dar las gracias a toda la gente de Duckietown Engineering y especialmente a la de Maquintel por hacer de esta una increíble experiencia.
