@@ -17,7 +17,7 @@ robot_localization: https://github.com/ros-perception/slam_gmapping.git
 gmapping: https://github.com/cra-ros-pkg/robot_localization.git
 
 map_server y amcl: https://github.com/ros-planning/navigation.git
-rplidar_a1.launch
+
 # Iniciar el Robot
 Se inicia con los comandos:
 ```
@@ -37,6 +37,9 @@ python joy_challenge.py
 python odometria.py
 ```
 Luego, desde otra terminal mas se lanzan una transformada y el launch de el Rplidar:
+```
+roslaunch rplidar_ros rplidar_a1.launch
+```
 
 # Ver Odometría
 Desde una terminal del computador se ejecutan los siguientes comandos mientras se esta ejecutando el RPlidar, odometria, joy_challenge, etc.
