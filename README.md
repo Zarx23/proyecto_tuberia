@@ -1,6 +1,6 @@
 # Detector de fugas
 Este proyecto fue realizado en el contexto del curso Duckietown del año 2023 en la Universidad de Chile
-# Requerimientos
+## Requerimientos
 Duckiebot Mark 3
 RPLIDAR A1M8
 Joystick para controlar el bot
@@ -18,7 +18,7 @@ gmapping: https://github.com/cra-ros-pkg/robot_localization.git
 
 map_server y amcl: https://github.com/ros-planning/navigation.git
 
-# Iniciar el Robot
+## Iniciar el Robot
 Se inicia con los comandos:
 ```
 ssh -X duckiebot@duckiebot.local
@@ -26,7 +26,7 @@ contraseña del bot
 roslaunch ros_cap duckie_core.launch 
 ```
 
-# Iniciar los programas
+## Iniciar los programas
 Conectado el robot como se hace siempre, se va hasta /catkin, de aqui se va a /proyecto_tuberia/duckiebot_odometry/src con cd, como se ve ahora:
 ```
 cd /proyecto_tuberia/duckiebot_odometry/src
@@ -41,7 +41,7 @@ Luego, desde otra terminal mas se lanzan una transformada y el launch de el Rpli
 roslaunch rplidar_ros rplidar_a1.launch
 ```
 
-# Ver Odometría
+## Ver Odometría
 Desde una terminal del computador se ejecutan los siguientes comandos mientras se esta ejecutando el RPlidar, odometria, joy_challenge, etc.
 ```
 export ROS_MASTER_URI=http://duckiebot.local:11311
@@ -53,12 +53,12 @@ Ej de rviz con DecayTIme suficiente para que no se borren los escaneos:
 
 ![Captura de pantalla de 2023-12-20 00-03-01](https://github.com/Zarx23/proyecto_tuberia/assets/142751889/a524bdfb-7ffe-4b57-9bf9-4d6b92241f48)
 
-# Grabar rosbag
+## Grabar rosbag
 Para grabar un rosbag que se usa posteriormente, hay que estar ejecutando todo lo que queremos grabar, es decir, todo lo mencionado anteriormente y ejecutar el siguiente comando en una terminal de robot:
 ```
 rosbag record -a
 ```
-# lanzar el detector de circulos junto al rosbag
+## lanzar el detector de circulos junto al rosbag
 Primero hay que dar permisos de ros con los comandos:
 ```
 roscore
@@ -72,7 +72,7 @@ Todo esto se hace en una terminal del computador, no a una conectada con el robo
 Ej de grafico:
 ![imagen](https://github.com/Zarx23/proyecto_tuberia/assets/142751889/daef5a17-cb33-43cf-a1b9-fb0e88b86e27)
 
-# Motivaciones
+## Motivaciones
 El objetivo final de este proyecto era detectar fallas en tuberías ocupando un Lidar. La idea era recrear la tubería en Rviz utilizando las mediciones del Lidar y un sistema de odometría donde el Lidar al trabajar en 2D correspondería con las dimensiones del círculo en los ejex XY y la odometría ayudaría a indicar cuanto se había movido el robot en el eje Z.
 
 Para implementar la odometría, primero calibramos la velocidad de las ruedas, pues en un inicio una avanzaba más que la otra. Luego de esto, corrimos el bot varias veces, midiendo la distancia recorrida y el tiempo empleado para así encontrar mediante regresión lineal la velocidad a la que avanzaban las ruedas. Una vez hecho esto, pudimos implementar el módulo de odometría, donde agregamos también un botón para reiniciar la cuenta de la odometría por si se querían tomar las muestras nuevamente.
