@@ -50,6 +50,7 @@ rviz
 Luego, en la pestaña de rviz se selecciona la opcion de "odom" en la seccion de "Fixed Frame". Luego, apretamos add, ordenamos "By topic" y agregamos LaserScan para ver los escaneos. Tambien se puede agregar Odometry para ver como evoluciona esta misma. Una parte importante es cambiar el Decay Time en la seccion de LaserScan, para mayor valor, mas tiempo se mantiene en pantalla los escaneos del sensor.
 
 Ej de rviz con DecayTIme suficiente para que no se borren los escaneos:
+
 ![Captura de pantalla de 2023-12-20 00-03-01](https://github.com/Zarx23/proyecto_tuberia/assets/142751889/a524bdfb-7ffe-4b57-9bf9-4d6b92241f48)
 
 # Grabar rosbag
