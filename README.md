@@ -18,13 +18,40 @@ gmapping: https://github.com/cra-ros-pkg/robot_localization.git
 
 map_server y amcl: https://github.com/ros-planning/navigation.git
 # Iniciar los programas
-especificar donde lanzamos cada cosa y donde la lanzamos
+Conectado el robot como se hace siempre, se va hasta /catkin, de aqui se va a /proyecto_tuberia/duckiebot_odometry/src con cd, como se ve ahora:
+```
+cd /proyecto_tuberia/duckiebot_odometry/src
+```
+Aqui, se ejecutan los siguientes comandos para abrir los archivos, los cuales de deben hacer cada comando en diferentes pestañas de la misma terminal, las cuales se pueden abrir con la tecla f2:
+```
+python joy_challenge.py
+python odometria.py
+```
+Luego, desde otra terminal mas se lanzan una transformada y el launch de el Rplidar:
+
 # Ver Odometría
-En otra terminal lanzar rviz explicar como configurar el rviz incluir fotos y el gif del rviz
+Desde una terminal del computador se ejecutan los siguientes comandos mientras se esta ejecutando el RPlidar, odometria, joy_challenge, etc.
+```
+export ROS_MASTER_URI=http://duckiebot.local:11311
+rviz
+```
+Luego, en la pestaña de rviz se selecciona la opcion de "odom" en la seccion de "Fixed Frame". Luego, apretamos add, ordenamos "By topic" y agregamos LaserScan para ver los escaneos. Tambien se puede agregar Odometry para ver como evoluciona esta misma. Una parte importante es cambiar el Decay Time en la seccion de LaserScan, para mayor valor, mas tiempo se mantiene en pantalla los escaneos del sensor.
 # Grabar rosbag
-explicar como se graba el rosbag
+Para grabar un rosbag que se usa posteriormente, hay que estar ejecutando todo lo que queremos grabar, es decir, todo lo mencionado anteriormente y ejecutar el siguiente comando en una terminal de robot:
+```
+rosbag record -a
+```
 # lanzar el detector de circulos junto al rosbag
-explicar como se hace, incluir las fotos de los circulos encontrando fallas.
+Primero hay que dar permisos de ros con los comandos:
+```
+roscore
+export ROS_MASTER_URI=http://duckiebot.local:11311
+```
+Para luego ejecutar el detector que toma un archivo de rosbag, entonces solo hay que usar el comando:
+```
+python3 circulo_con_rosbags.py 
+```
+Todo esto se hace en una terminal del computador, no a una conectada con el robot.
 # Motivaciones
 El objetivo final de este proyecto era detectar fallas en tuberías ocupando un Lidar. La idea era recrear la tubería en Rviz utilizando las mediciones del Lidar y un sistema de odometría donde el Lidar al trabajar en 2D correspondería con las dimensiones del círculo en los ejex XY y la odometría ayudaría a indicar cuanto se había movido el robot en el eje Z.
 
