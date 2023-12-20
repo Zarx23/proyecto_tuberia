@@ -64,6 +64,9 @@ Para luego ejecutar el detector que toma un archivo de rosbag, entonces solo hay
 python3 circulo_con_rosbags.py 
 ```
 Todo esto se hace en una terminal del computador, no a una conectada con el robot.
+Ej de grafico:
+![imagen](https://github.com/Zarx23/proyecto_tuberia/assets/142751889/daef5a17-cb33-43cf-a1b9-fb0e88b86e27)
+
 # Motivaciones
 El objetivo final de este proyecto era detectar fallas en tuberías ocupando un Lidar. La idea era recrear la tubería en Rviz utilizando las mediciones del Lidar y un sistema de odometría donde el Lidar al trabajar en 2D correspondería con las dimensiones del círculo en los ejex XY y la odometría ayudaría a indicar cuanto se había movido el robot en el eje Z.
 
